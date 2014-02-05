@@ -1,0 +1,11 @@
+<h1>Publisher Details</h1>
+
+<p>
+  <strong>Publisher Name</strong> : <%= @publisher_details["data"][0]["name"] %><br/><br/>
+  <strong>Location </strong> : <%= @publisher_details["data"][0]["location"] %><br/><br/>
+  <strong>Boook Count</strong>: <%= @publisher_details["data"][0]["book_count"] %><br/><br/>
+  <strong>Books Published </strong> : 
+        <% @publisher_details["data"][0]["book_ids"].each do |book| %>
+            <a href="/book/<%= book %>"><%= book.gsub("_"," ").capitalize %></a><br/>
+        <% end %>
+</p>

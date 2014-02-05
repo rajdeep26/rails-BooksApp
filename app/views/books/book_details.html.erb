@@ -1,0 +1,11 @@
+<h1>Book Details</h1>
+
+<p>
+  <strong>Title</strong> : <%= @book_details["data"][0]["title"] %><br/><br/>
+  <strong>Summary</strong> : <%= @book_details["data"][0]["summary"] %><br/><br/>
+  <strong>Authors</strong> : <% @book_details["data"][0]["author_data"].each do |author| %>
+                               <a href="/author/<%= author["id"] %>"><%= author["name"] %></a>
+                            <% end %><br/><br/>
+  <strong>Publisher</strong> : <a href="/publisher/<%= @book_details["data"][0]["publisher_id"]%>"><%= @book_details["data"][0]["publisher_name"] %></a><br/><br/>
+  <strong>ISBN </strong>: <%= @book_details["data"][0]["isbn13"] %><br/><br/>
+</p>

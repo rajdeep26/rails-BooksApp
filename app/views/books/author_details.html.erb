@@ -1,0 +1,12 @@
+<h1>Author Details</h1>
+
+<p>
+  <strong>First Name</strong> : <%= @author_details["data"][0]["first_name"] %><br/><br/>
+  <strong>Last Name</strong> : <%= @author_details["data"][0]["last_name"] %><br/><br/>
+  <strong>Full Name</strong> : <%= @author_details["data"][0]["name"] %><br/><br/>
+  <strong>Boook Count</strong>: <%= @author_details["data"][0]["book_count"] %><br/><br/>
+  <strong>Books Written </strong> : 
+        <% @author_details["data"][0]["book_ids"].each do |book| %>
+            <a href="/book/<%= book %>"><%= book.gsub("_"," ").capitalize %></a><br/>
+        <% end %>
+</p>

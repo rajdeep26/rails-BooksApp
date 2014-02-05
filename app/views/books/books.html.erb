@@ -1,0 +1,12 @@
+<h1>List of Books</h1>
+<% @books["data"].each do |book| %>
+  <p>
+    <strong>Title</strong> :  <a href="/book/<%= book["isbn13"] %>"><%= book["title"] %><a/><br/>
+    <strong>Summary</strong> : <%= book["summary"] %><br/>
+    <strong>Authors</strong> : <% book["author_data"].each do |author| %>
+                                <a href="/author/<%= author["id"] %>"><%= author["name"] %></a>
+                              <% end %><br/>
+    <strong>Publisher</strong> : <a href="/publisher/<%= book["publisher_id"]%>"><%= book["publisher_name"] %></a> <br/>
+    <strong>ISBN </strong> : <a href="/book/<%= book["isbn13"] %>"><%= book["isbn13"] %></a><br/>
+  </p>
+<% end %>
